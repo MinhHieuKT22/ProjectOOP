@@ -1,0 +1,11 @@
+(select (?person ?label ?detail) (q ?person !rdf:type !nst:Person) (q ?person !nse:label ?label) (q ?person !nse:detail ?detail))
+(select (?personlabel ?age) (q ?person !nse:age ?age) (upi< !"18"^^xsd:int ?age) (upi< ?age !"65"^^xsd:int) (q ?person !nse:label ?personlabel))
+(select (?event ?country) (q ?event !rdf:type !nst:Event) (q ?country !rdf:type !nst:Country) (q ?event !rela: ?country))
+(select (?event ?country
+(select (?eventlabel) (q ?event !rdf:type !nst:Event) (q ?event !nse:label ?eventlabel) (q ?event !source:date ?date) (upi< !"01/01/2012"^^xsd:date ?date))
+(select (?organizationlabel) (q ?organization !rdf:type !ns:Organization) (q ?organization !ns:label ?organizationlabel) (q ?organization !ns:headquarter !"Hanoi, Vietnam"))
+(select (?personlabel) (q ?person !rdf:type !ns:Person) (q ?person !ns:description !"She is a artist") (q ?person !ns:label ?personlabel))
+(select (?label ?locationlabel) (q ?object !rela:arrive ?location) (q ?location !rdf:type !ns:Location) (q ?location !ns:label ?locationlabel) (q ?object !ns:label ?label))
+(select (?eventlabel ?countrylabel) (q ?event !rela:occur ?country) (q ?event !rdf:type !ns:Event) (q ?country !rdf:type !ns:Country) (q ?event !ns:label ?eventlabel) (q ?country !ns:label ?countrylabel))
+(select (?personlabel ?organizationlabel) (q ?person !rela:work ?organization) (q ?person !rdf:type !ns:Person) (q ?organization !rdf:type !ns:Organization) (q ?person !ns:label ?personlabel) (q ?organization !ns:label ?organizationlabel))
+(select (?eventlabel ?timelabel) (q ?event !rela:occur ?time) (q ?event !rdf:type !ns:Event) (q ?time !rdf:type !ns:Time) (q ?event !ns:label ?eventlabel) (q ?time !ns:label ?timelabel))

@@ -1,0 +1,10 @@
+select ?s where { ?s rdf:type <http://projectoop/ontology/Person> }
+select ?s where { ?s rdf:type <http://projectoop/ontology/Country> }
+select ?s where { ?s rdf:type <http://projectoop/ontology/Event> }
+select ?s where { ?s rdf:type <http://projectoop/ontology/Location> }
+select ?s where { ?s rdf:type <http://projectoop/ontology/Organization> }
+select ?s where { ?s rdf:type <http://projectoop/ontology/Time> }
+select ?s where { ?s <http://projectoop/entity/age> ?o . filter ((?o >= 18) && (?o <= 65)) }
+select ?s where { ?s <http://projectoop/entity/headquarter> ?o . filter regex(?o, "India") }
+select ?s ?p ?o where { ?s ?p ?o . filter regex(?o, "Vietnam")}
+select ?s where { ?s <http://projectoop/entity/label> ?o . filter regex(?o, "Ha Noi")}

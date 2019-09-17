@@ -1,0 +1,10 @@
+select ?s where { ?s rdf:type <http://projectoop/ontology/Person> }
+select ?s where { ?s rdf:type <http://projectoop/ontology/Country> }
+select ?s where { ?s rdf:type <http://projectoop/ontology/Organization> }
+select ?s where { ?s <http://projectoop/entity/date> ?o . filter (?o >= "2010-01-20"^^xsd:date)}
+select ?s ?o where {?s rela:phê_bình ?o }
+select ?s where { ?s <http://projectoop/entity/age> ?o . filter ((?o >= 18) && (?o <= 65)) }
+select ?s ?o where { ?s <http://projectoop/entity/headquarter> ?o . filter regex(?o, "^Mỹ") }
+select ?s ?o where { ?s nse:detail ?o .filter regex(?o, "cao nhất thế giới")}
+select ?s ?o where { ?s nse:label ?o . filter regex(?o, "^Trần")}
+select ?s where { ?s <http://projectoop/entity/label> ?o . filter regex(?o, "Hà Nội")}
